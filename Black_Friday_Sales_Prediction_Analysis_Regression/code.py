@@ -52,7 +52,10 @@ df['Product_Category_3'] = df['Product_Category_3'].fillna(-2.0).astype("float32
 
 df.isnull().sum()
 
-
+# encoding vales using dict
+gender_dict = {'F':0, 'M':1}
+df['Gender'] = df['Gender'].apply(lambda x: gender_dict[x])
+df.head()
 
 
 
