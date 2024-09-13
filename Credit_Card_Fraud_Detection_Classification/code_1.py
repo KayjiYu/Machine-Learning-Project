@@ -104,6 +104,7 @@ X_smote, y_smote = over_sample.fit_resample(X_train, y_train)
 def train_model(model):
     model.fit(X_smote, y_smote)
     y_pred = model.predict(X_test)
+    print(f"--------------{model}---------------")
     print(classification_report(y_test, y_pred))
     print(f"F1 score: {f1_score(y_test, y_pred)}")
     
